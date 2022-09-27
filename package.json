@@ -1,7 +1,7 @@
 {
-  "name": "devconnector",
+  "name": "BackHorekart",
   "version": "1.0.0",
-  "description": "Social network for developers",
+  "description": "BackHore kart admin page",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix frontend",
