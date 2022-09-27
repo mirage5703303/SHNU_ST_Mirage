@@ -6,7 +6,8 @@ import {
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
   GET_ERRORS,
-  SET_CURRENT_USER
+  SET_CURRENT_USER,
+  GET_DASH,
 } from './types';
 
 // Get current profile
@@ -27,7 +28,24 @@ export const getCurrentProfile = () => dispatch => {
       })
     );
 };
-
+// Get table
+export const getTableData = () => dispatch => {
+  axios
+    .get('/api/letlogin/gettable')
+    .then(res =>
+      // console.log("returndata: ", res.data)
+      dispatch({
+        type: GET_DASH,
+        payload: res.data,
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_DASH,
+        payload: {}
+      })
+    );
+}
 // Get profile by handle
 export const getProfileByHandle = handle => dispatch => {
   dispatch(setProfileLoading());
